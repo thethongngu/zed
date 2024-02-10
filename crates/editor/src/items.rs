@@ -1028,7 +1028,7 @@ impl SearchableItem for Editor {
     ) {
         self.unfold_ranges([matches[index].clone()], false, true, cx);
         let range = self.range_for_match(&matches[index]);
-        self.change_selections(Some(Autoscroll::fit()), cx, |s| {
+        self.change_selections(Some(Autoscroll::center()), cx, |s| {
             s.select_ranges([range]);
         })
     }
